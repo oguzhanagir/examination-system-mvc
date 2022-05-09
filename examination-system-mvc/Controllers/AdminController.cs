@@ -18,18 +18,8 @@ namespace examination_system_mvc.Controllers
         {
             return View();
         }
-        public ActionResult UsersGetAll()
-        {
-            var userList = userManager.GetAll(); 
-            return View(userList);
-        }
+     
 
-        
-        public ActionResult DeleteUser(int id)
-        {
-            userManager.DeleteUserBL(id);
-            return RedirectToAction("UsersGetAll");
-        }
 
         public PartialViewResult UserCount()
         {

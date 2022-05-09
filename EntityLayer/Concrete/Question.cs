@@ -25,7 +25,7 @@ namespace EntityLayer.Concrete
         public int UnitNo { get; set; }
         public int SubjectNo { get; set; }
         public int QuestionNo { get; set; }
-        public int CodeNo { get; set; }
+        public string CodeNo { get; set; }
         public char RightAnswer { get; set; }
         public char WrongAnswers { get; set; }
 
@@ -35,7 +35,7 @@ namespace EntityLayer.Concrete
         [StringLength(600)]
         public string QuestionText { get; set; }
 
-        
+     
         
     }
 }

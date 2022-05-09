@@ -1,4 +1,5 @@
 ﻿@model EntityLayer.Concrete.Question
+
 @{
     Layout = null;
 }
@@ -16,6 +17,9 @@
     <div class="container p-5 m-auto" style="width:55%;">
         <div class="row">
             <form class="form-group" method="post">
+                @Html.Label("Kod No")
+                @Html.TextBoxFor(x => x.CodeNo, new { @class = "form-control border border-primary mt-4" })
+                <br />
                 @Html.Label("Sınıf Düzeyi")
                 @Html.TextBoxFor(x => x.GradeLevel, new { @class = "form-control border border-primary mt-4" })
                 <br />
@@ -40,9 +44,17 @@
                 @Html.Label("Soru Açıklaması")
                 @Html.TextAreaFor(x => x.QuestionText, new { @class = "form-control border border-primary mt-4" })
                 <br />
-                <p>Grade Level Alınacak</p>
-                //Resim Eklenecek 
-                //Çoktan Seçmeli Soru Cevapları (radioButton) Eklenecek
+                @Html.Label("Resim")
+                @Html.TextBoxFor(x => x.PicturePath, new { @class = "form-control border border-primary mt-4" })
+                <br />
+                @Html.CheckBoxFor(x => x, new {@class = "form-control border border-primary mt-4"})
+
+
+
+
+
+
+
                 <button class="btn btn-rounded btn-success mt-5">Soru Ekle</button>
             </form>
         </div>

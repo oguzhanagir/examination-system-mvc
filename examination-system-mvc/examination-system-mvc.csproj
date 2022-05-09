@@ -302,7 +302,6 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Admin\UsersGetAll.cshtml" />
     <Content Include="Views\Admin\UserCount.cshtml" />
     <Content Include="Views\Admin\QuestionCount.cshtml" />
     <Content Include="Views\Shared\ExaminerLayout.cshtml" />
@@ -315,6 +314,8 @@
     <Content Include="Views\Student\Report.cshtml" />
     <Content Include="Views\Student\Settings.cshtml" />
     <Content Include="Views\User\UserProfileList.cshtml" />
+    <Content Include="Views\Question\QuestionGetList.cshtml" />
+    <Content Include="Views\User\UsersGetAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

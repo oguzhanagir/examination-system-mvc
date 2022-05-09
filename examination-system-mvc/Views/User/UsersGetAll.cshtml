@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EntityLayer.Concrete.User>
+﻿
 @{
     ViewBag.Title = "UsersGetAll";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -19,17 +19,16 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <th scope="row">@item.UserID</th>
-            <td>@item.UserName</td>
-            <td>@item.Name</td>
-            <td>@item.Surname</td>
-            <td>@item.Mail</td>
-            <td>@item.UserType.UserTypeName</td>
-            <td><a href="/Admin/DeleteUser/@item.UserID" class="btn btn-rounded btn-danger ">Sil</a></td>
-        </tr>
+            <tr>
+                <th scope="row">@item.UserID</th>
+                <td>@item.UserName</td>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td>@item.Mail</td>
+                <td>@item.UserType.UserTypeName</td>
+                <td><a href="/User/DeleteUser/@item.UserID" class="btn btn-rounded btn-danger ">Sil</a></td>
+            </tr>
         }
 
     </tbody>
 </table>
-

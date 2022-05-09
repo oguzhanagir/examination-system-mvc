@@ -27,5 +27,10 @@ namespace BusinessLayer.Concrete
         {
             return repoQuestion.List().Count();
         }
+
+        public int QuestionAddBL(Question p)
+        {
+            return repoQuestion.Insert(p);
+        }
     }
 }

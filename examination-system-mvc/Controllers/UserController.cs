@@ -12,7 +12,7 @@ namespace examination_system_mvc.Controllers
         // GET: User
 
         UserProfileManager profileManager = new UserProfileManager();
-
+        UserManager userManager = new UserManager();
         public ActionResult Index()
         {
             return View();
@@ -23,6 +23,19 @@ namespace examination_system_mvc.Controllers
 
             var profileValues = profileManager.GetUserByMail(p);
             return PartialView(profileValues);
+        }
+
+        public ActionResult UsersGetAll()
+        {
+            var userList = userManager.GetAll();
+            return View(userList);
+        }
+
+
+        public ActionResult DeleteUser(int id)
+        {
+            userManager.DeleteUserBL(id);
+            return RedirectToAction("UsersGetAll");
         }
 
     }
