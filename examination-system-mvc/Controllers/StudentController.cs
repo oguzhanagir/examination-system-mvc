@@ -13,5 +13,15 @@ namespace examination_system_mvc.Controllers
         {
             return View();
         }
+
+        public ActionResult Report()
+        {
+            return View();
+        }
+
+        public ActionResult Settings()
+        {
+            return View();
+        }
     }
 }

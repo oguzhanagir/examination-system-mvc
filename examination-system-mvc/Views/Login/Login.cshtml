@@ -16,18 +16,7 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="~/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/login/vendor/animate/animate.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/login/vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/login/vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/login/vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/login/vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
+    
     <link rel="stylesheet" type="text/css" href="~/login/css/util.css">
     <link rel="stylesheet" type="text/css" href="~/login/css/main_yazar.css">
     <!--===============================================================================================-->
@@ -43,10 +32,10 @@
                     </span>
                 </div>
 
-                <form class="login100-form validate-form">
+                <form class="login100-form validate-form" method="post">
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Giriş Yapabilmeniz İçin Şifre Gerekli!">
-                        <span class="label-input100">Kullanıcı Adı</span>
-                        <input class="input100" type="text" name="username" placeholder="Kullanıcı Adı Giriniz">
+                        <span class="label-input100">E Posta Adresi</span>
+                        <input class="input100" type="text" name="Mail" placeholder="E Posta Adresinizi Giriniz">
                         <span class="focus-input100"></span>
                     </div>
 
@@ -54,12 +43,12 @@
 
                     <div class="wrap-input100 validate-input m-b-18" data-validate="Giriş Yapabilmeniz İçin Şifre Gerekli">
                         <span class="label-input100">Şifre</span>
-                        <input class="input100" type="password" name="pass" placeholder="Şifre Giriniz">
+                        <input class="input100" type="password" name="Password" placeholder="Şifre Giriniz">
                         <span class="focus-input100"></span>
                     </div>
 
                     <div class="flex-sb-m w-full p-b-30">
-                        <div class="contact100-form-checkbox">
+                        @*<div class="contact100-form-checkbox">
                             <input class="input-checkbox100 " id="adminRadio" type="radio" name="remember-me">
                             <label class="label-checkbox100 mt-3" for="adminRadio">
                                 Admin
@@ -72,7 +61,7 @@
                             <label class="label-checkbox100 mt-3" for="ögrenciRadio ">
                                 Öğrenci
                             </label>
-                        </div>
+                        </div>*@
 
                         <div>
                             <a href="#" class="txt1">

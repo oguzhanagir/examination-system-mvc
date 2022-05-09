@@ -15,5 +15,16 @@ namespace BusinessLayer.Concrete
         {
             return repoUser.List();
         }
+
+        public int DeleteUserBL(int p)
+        {
+            User user = repoUser.Find(x => x.UserID == p);
+            return repoUser.Delete(user);
+        }
+
+        public int UserCountBL()
+        {
+            return repoUser.List().Count();
+        }
     }
 }

@@ -6,24 +6,21 @@ using System.Web.Mvc;
 
 namespace examination_system_mvc.Controllers
 {
-    public class HomeController : Controller
+    public class QuestionController : Controller
     {
+        // GET: Question
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult QuestionAdd()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Exam()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
