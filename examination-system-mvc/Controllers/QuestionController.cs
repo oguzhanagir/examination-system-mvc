@@ -36,7 +36,8 @@ namespace examination_system_mvc.Controllers
 
         public ActionResult Exam()
         {
-            return View();
+            var questionList = questionManager.GetAll();
+            return View(questionList);
         }
 
         public ActionResult QuestionGetList()

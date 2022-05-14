@@ -25,14 +25,19 @@ namespace EntityLayer.Concrete
         public int UnitNo { get; set; }
         public int SubjectNo { get; set; }
         public int QuestionNo { get; set; }
+
+        [StringLength(10)]
         public string CodeNo { get; set; }
-        public char RightAnswer { get; set; }
-        public char WrongAnswers { get; set; }
+
+        [StringLength(500)]
+        public string RightAnswer { get; set; }
+
+        [StringLength(500)]
+        public string WrongAnswers { get; set; }
 
         [StringLength(200)]
         public string PicturePath { get; set; }
 
-        [StringLength(600)]
         public string QuestionText { get; set; }
 
      
