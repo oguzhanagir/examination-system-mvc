@@ -32,5 +32,7 @@ namespace BusinessLayer.Concrete
         {
             return repoQuestion.Insert(p);
         }
+
+       
     }
 }

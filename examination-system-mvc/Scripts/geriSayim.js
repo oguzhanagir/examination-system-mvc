@@ -1,18 +1,24 @@
-﻿const startingMinutes = 10;
+﻿const startingMinutes = 1;
 let time = startingMinutes * 60;
 
 const countDownEl = document.querySelector('#countDown');
 
-setInterval(updateCoutDown, 1000);
 
-function updateCoutDown() {
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60;
 
-    seconds = seconds < 10 ? '0' + seconds : seconds;
+let countStart = setInterval(() => {
+    if (time <= 0) {
+        clearInterval(countStart);
+        window.location.href = "~/Student/Index";
+    }
+    else {
+        time--;
 
-    countDownEl.innerHTML = `${minutes}:${seconds}`;
+        const minute = Math.floor(time / 60) % 60;
+        const second = Math.floor(time % 60);
+        countDownEl.innerHTML = `Sınav Süresi : ${format(minute)} : ${format(second)} `
+    }
+}, 1000);
 
-    time--;
+function format(a) {
+    return a < 10 ? `0${a}` : a;
 }
-
