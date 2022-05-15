@@ -73,20 +73,20 @@
 
                 <input type="radio" value="D" name="RightAnswer"> <span>D</span>
                 @Html.TextBoxFor(x => x.Answer.OptionD, new { @class = "form-control border border-primary mt-4 mb-5", @placeholder = "D Cevap Şıkkı" })
-
+               
 
                 <button onclick="btngetHTMLCode()" class="btn btn-rounded btn-success mt-3"> Güncelle</button>
             </form>
 
         </div>
     </div>
-
+    
     @*Rich Text Editor Start*@
 
     <script>
         var editor1 = new RichTextEditor("#div_editor1");
 
-        editor1.setHTMLCode(@ViewBag.questionText);
+        editor1.setHTMLCode("<p>Deneme<\p>");
 
         function btngetHTMLCode() {
             alert(editor1.getHTMLCode());

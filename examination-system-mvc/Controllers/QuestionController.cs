@@ -6,13 +6,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace examination_system_mvc.Controllers
 {
     public class QuestionController : Controller
     {
         // GET: Question
-
+        Context c = new Context();
         QuestionManager questionManager = new QuestionManager();
         public ActionResult Index()
         {
@@ -52,14 +53,14 @@ namespace examination_system_mvc.Controllers
         [HttpGet]
         public ActionResult Exam()
         {
-            var questionList = questionManager.GetRandom();
-            return View(questionList);
+            var questionGetRandomList = questionManager.GetRandom();
+            return View(questionGetRandomList);
         }
 
         [HttpPost]
         public ActionResult Exam(Question p)
         {
-            //Eklenecektir
+            var questionInfo = c.Questions.FirstOrDefault(x => x.RightAnswer == p.RightAnswer);
             
             return RedirectToAction("Index");
         }
@@ -69,7 +70,6 @@ namespace examination_system_mvc.Controllers
         {
             Question question = questionManager.FindQuestion(id);
 
-            ViewBag.questionText = question.QuestionText;
 
             return View(question);
         }
@@ -82,5 +82,39 @@ namespace examination_system_mvc.Controllers
             return RedirectToAction("QuestionGetList");
         }
 
+
+        //public ActionResult GetDataWord(HttpPostedFileBase wordFile)
+        //{
+        //    if (wordFile == null || wordFile.ContentLength ==0)
+        //    {
+        //        ViewBag.Error = "Lütfen Dosya Seçimi Yapınız";
+        //        return View();
+        //    }
+        //    else
+        //    {
+        //        //Dosya uzantısı docx ise
+        //        if (wordFile.FileName.EndsWith("docx")|| wordFile.FileName.EndsWith("doc"))
+        //        {
+        //            //Dosyanın Nereye Yükleneceği Seçimi
+        //            string path = Server.MapPath("~/Content/Questions/" + wordFile.FileName);
+
+        //            //Dosya Kontrol Edilir Varsa Silinir.
+        //            if (System.IO.File.Exists(path))
+        //            {
+        //                System.IO.File.Delete(path);
+        //            }
+
+        //            //Word Path Yoluna Kaydedilir
+
+        //            wordFile.SaveAs(path);
+
+        //            Word.Application application = new Word.Application();
+        //            Word.Workbook workbook = application.Workbooks.Open(path);
+
+
+        //        }
+        //    }
+
+        //}
     }
 }
