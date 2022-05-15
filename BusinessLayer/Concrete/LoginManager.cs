@@ -15,5 +15,7 @@ namespace BusinessLayer.Concrete
         {
             return repoUser.Insert(p);
         }
+
+        
     }
 }

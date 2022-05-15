@@ -4,6 +4,8 @@
     Layout = null;
 }
 
+
+
 <!DOCTYPE html>
 
 <html>
@@ -16,7 +18,7 @@
     <link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />
     <script type="text/javascript" src="~/richtexteditor/rte.js"></script>
     <script type="text/javascript" src='~/richtexteditor/plugins/all_plugins.js'></script>
-
+    
 </head>
 <body>
     <div class="container p-5 m-auto" style="width:55%;">
@@ -44,36 +46,29 @@
                     <p>Initial Document Content</p>
                 </div>
 
+                <input id="richText" checked type="radio" value="Soru" name="QuestionText">
+
 
 
                 <label class="mt-5 mb-5">Doğru Olan Şıkkı İşaretleyiniz</label>
                 <br />
                 @*Şıkları Veri tabanına kaydetme işlemi yapılacak*@
-                <input type="radio" value="A" name="RightAnswer">
-                <input class="form-control border border-primary mt-4 mb-5" type="text" name="RightAnswer" placeholder="A Şıkkı:">
+                <input type="radio" value="A" name="RightAnswer"> <span>A</span>
+                @Html.TextBoxFor(x => x.Answer.OptionA, new { @class = "form-control border border-primary mt-4 mb-5", @placeholder = "A Cevap Şıkkı" })
 
-                <input type="radio" value="B" name="RightAnswer">
-                <input class="form-control border border-primary mt-4 mb-5" type="text" name="RightAnswer" placeholder="B Şıkkı">
+                <input type="radio" value="B" name="RightAnswer"> <span>B</span>
+                @Html.TextBoxFor(x => x.Answer.OptionB, new { @class = "form-control border border-primary mt-4 mb-5", @placeholder = "B Cevap Şıkkı" })
 
-                <input type="radio" value="C" name="RightAnswer">
-                <input class="form-control border border-primary mt-4 mb-5" type="text" name="RightAnswer" placeholder="C Şıkkı">
+                <input type="radio" value="C" name="RightAnswer"> <span>C</span>
+                @Html.TextBoxFor(x => x.Answer.OptionC, new { @class = "form-control border border-primary mt-4 mb-5", @placeholder = "C Cevap Şıkkı" })
 
-                <input type="radio" value="D" name="RightAnswer">
-                <input class="form-control border border-primary mt-4 mb-5" type="text" name="RightAnswer" placeholder="D Şıkkı">
-
-               
-                <script>
-                    var input = document.createElement("input")
-
-                    input.type = "text";
-                    input.name = "QuestionText";
-                    
-                    
-                </script>
+                <input type="radio" value="D" name="RightAnswer"> <span>D</span>
+                @Html.TextBoxFor(x => x.Answer.OptionD, new { @class = "form-control border border-primary mt-4 mb-5", @placeholder = "D Cevap Şıkkı" })
 
 
-                <button onclick="btngetHTMLCode()"  class="btn btn-rounded btn-success mt-5">Soru Ekle</button>
-                
+
+                <button onclick="btngetHTMLCode()" class="btn btn-rounded btn-success mt-5">Soru Ekle</button>
+
 
             </form>
         </div> 
@@ -84,10 +79,11 @@
     <script>
         var editor1 = new RichTextEditor("#div_editor1");
 
-        editor1.setHTMLCode("<p><b>Hello</b> World</p><p>Click the button below to show this HTML code</p>");
+        editor1.setHTMLCode("<p>Merhabalar</p><p>Soru Yazı Kısmıdır</p>");
 
         function btngetHTMLCode() {
-            alert(editor1.getHTMLCode())
+            alert(editor1.getHTMLCode());
+            document.getElementById("richText").value = editor1.getHTMLCode();
         }
 
         

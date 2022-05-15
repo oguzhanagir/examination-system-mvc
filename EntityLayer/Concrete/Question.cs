@@ -32,15 +32,15 @@ namespace EntityLayer.Concrete
         [StringLength(500)]
         public string RightAnswer { get; set; }
 
-        [StringLength(500)]
-        public string WrongAnswers { get; set; }
-
         [StringLength(200)]
         public string PicturePath { get; set; }
 
         public string QuestionText { get; set; }
 
-     
-        
+        public int AnswerID { get; set; }
+
+        public virtual Answer Answer { get; set; }
+
+
     }
 }

@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concrete\Answer.cs" />
     <Compile Include="Concrete\Question.cs" />
     <Compile Include="Concrete\User.cs" />
     <Compile Include="Concrete\UserType.cs" />

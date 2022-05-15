@@ -70,9 +70,12 @@ namespace examination_system_mvc.Controllers
             return RedirectToAction("Register");
         }
 
+        
         public ActionResult ForgotPassword()
         {
             return View();
         }
+
+        
     }
 }

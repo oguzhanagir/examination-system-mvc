@@ -26,18 +26,13 @@ namespace examination_system_mvc.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult QuestionAdd(Question p)
         {
             
             questionManager.QuestionAddBL(p);
             return RedirectToAction("QuestionGetList");
             
-        }
-
-        public ActionResult Exam()
-        {
-            var questionList = questionManager.GetAll();
-            return View(questionList);
         }
 
         public ActionResult QuestionGetList()
@@ -53,5 +48,21 @@ namespace examination_system_mvc.Controllers
             questionManager.DeleteQuestionBL(id);
             return RedirectToAction("QuestionGetList");
         }
+
+        [HttpGet]
+        public ActionResult Exam()
+        {
+            var questionList = questionManager.GetAll();
+            return View(questionList);
+        }
+
+        [HttpPost]
+        public ActionResult Exam(Question p)
+        {
+            
+            return RedirectToAction("");
+        }
+
+
     }
 }
