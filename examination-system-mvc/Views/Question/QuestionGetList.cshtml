@@ -15,24 +15,26 @@
             <th scope="col">Konu No</th>
             <th scope="col">Konu Adı</th>
             <th scope="col">Soru No</th>
+            <th scope="col"></th>
 
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <th> </th>
-                <th scope="row">@item.CodeNo</th>
-                <td>@item.GradeLevel</td>
-                <td>@item.LessonName</td>
-                <td>@item.UnitNo</td>
-                <td>@item.UnitName</td>
-                <td>@item.SubjectNo</td>
-                <td>@item.SubjectName</td>
-                <td>@item.QuestionNo</td>
-                <td><a href="/Question/DeleteQuestion/@item.QuestionID" class="btn btn-rounded btn-danger ">Sil</a></td>
-            </tr>
+        <tr>
+            <th> </th>
+            <th scope="row">@item.CodeNo</th>
+            <td>@item.GradeLevel</td>
+            <td>@item.LessonName</td>
+            <td>@item.UnitNo</td>
+            <td>@item.UnitName</td>
+            <td>@item.SubjectNo</td>
+            <td>@item.SubjectName</td>
+            <td>@item.QuestionNo</td>
+            <td><a href="/Question/DeleteQuestion/@item.QuestionID" class="btn btn-rounded btn-danger ">Sil</a></td>
+            <td><a href="/Question/UpdateQuestion/@item.QuestionID" class="btn btn-rounded btn-success">Güncelle</a></td>
+        </tr>
         }
 
     </tbody>

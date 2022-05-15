@@ -511,7 +511,7 @@
     <Content Include="login\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="richtexteditor\README.md" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\geriSayim.js" />
+    <Content Include="Scripts\geriSayim1.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -557,6 +557,7 @@
     <Content Include="Views\User\UserProfileList.cshtml" />
     <Content Include="Views\Question\QuestionGetList.cshtml" />
     <Content Include="Views\User\UsersGetAll.cshtml" />
+    <Content Include="Views\Question\UpdateQuestion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

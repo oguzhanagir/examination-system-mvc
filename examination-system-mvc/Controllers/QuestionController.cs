@@ -52,17 +52,35 @@ namespace examination_system_mvc.Controllers
         [HttpGet]
         public ActionResult Exam()
         {
-            var questionList = questionManager.GetAll();
+            var questionList = questionManager.GetRandom();
             return View(questionList);
         }
 
         [HttpPost]
         public ActionResult Exam(Question p)
         {
+            //Eklenecektir
             
-            return RedirectToAction("");
+            return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public ActionResult UpdateQuestion(int id)
+        {
+            Question question = questionManager.FindQuestion(id);
+
+            ViewBag.questionText = question.QuestionText;
+
+            return View(question);
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult UpdateQuestion(Question p)
+        {
+            questionManager.UpdateQuestion(p);
+            return RedirectToAction("QuestionGetList");
+        }
 
     }
 }

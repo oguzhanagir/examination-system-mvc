@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -51,6 +52,11 @@ namespace DataAccessLayer.Concrete
         public List<T> List(Expression<Func<T, bool>> where)
         {
             return _object.Where(where).ToList();
+        }
+
+        public List<T> RandomList()
+        {
+            return _object.OrderBy(p => Guid.NewGuid()).Take(10).ToList();
         }
 
         public int Update(T p)

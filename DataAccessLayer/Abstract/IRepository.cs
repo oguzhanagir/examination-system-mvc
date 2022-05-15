@@ -19,6 +19,7 @@ namespace DataAccessLayer.Abstract
         List<T> List(Expression<Func<T, bool>> where);
         T Find(Expression<Func<T, bool>> where);
 
+        List<T> RandomList();
        
     }
 }
