@@ -50,7 +50,7 @@ namespace BusinessLayer.Concrete
             question.SubjectName = p.SubjectName;
             question.QuestionNo = p.QuestionNo;
             question.QuestionText = p.QuestionText;
-            question.RightAnswer = p.RightAnswer;
+            question.Answer.RightAnswer = p.Answer.RightAnswer;
             question.Answer.OptionA = p.Answer.OptionA;
             question.Answer.OptionB = p.Answer.OptionB;
             question.Answer.OptionC= p.Answer.OptionC;

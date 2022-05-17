@@ -36,9 +36,8 @@ namespace EntityLayer.Concrete
         public string QuestionText { get; set; }
 
         public int AnswerID { get; set; }
-
         public virtual Answer Answer { get; set; }
 
-
+        public ICollection<Sigma> Sigmas { get; set; }
     }
 }

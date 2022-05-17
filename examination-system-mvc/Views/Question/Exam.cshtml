@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<EntityLayer.Concrete.Question>
+
 @{
     Layout = null;
 }
@@ -48,42 +49,39 @@
 
                                 <div class="container">
                                     <form class="form-group" method="post">
+                                        <input class="d-none" type="radio" checked name="QuestionID" value="@item.QuestionID" />
+                                        <input class="d-none" type="radio" checked name="UserID" value="3" />
+
                                         <div class="">
                                             <label class="mt-4">
-                                                <input type="radio" name="radio" />
+                                                <input type="radio" value="A" name="UserAnswer" />
                                                 <span>@item.Answer.OptionA</span>
                                             </label>
                                             <br />
                                             <label class="mt-4">
-                                                <input type="radio" name="radio" />
+                                                <input type="radio" value="B" name="UserAnswer" />
                                                 <span>@item.Answer.OptionB</span>
                                             </label>
                                             <br />
                                             <label class="mt-4">
-                                                <input type="radio" name="radio" />
+                                                <input type="radio" value="C" name="UserAnswer" />
                                                 <span>@item.Answer.OptionC</span>
                                             </label>
                                             <br />
                                             <label class="mt-4">
-                                                <input type="radio" name="radio" />
+                                                <input type="radio" value="D" name="UserAnswer" />
                                                 <span>@item.Answer.OptionD</span>
                                             </label>
                                         </div>
-
-
+                                        <button class="btn btn-rounded btn-danger mt-5 float-end">Sınavı Bitir</button>
 
                                     </form>
                                 </div>
                             </div>
                         </div>
-                        if (item.QuestionID == 10)
-                        {
-                            break;
-                        }
+                        
                     }
-                <form class="form-group" method="post">
-                    <button class="btn btn-rounded btn-danger mt-5 float-end">Sınavı Bitir</button>
-                </form>
+                
                     
                 </div>
             </div>

@@ -14,5 +14,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<UserType> UserTypes { get; set; }
         public DbSet<Question> Questions  { get; set; }
         public DbSet<Answer> Answers  { get; set; }
+        public DbSet<Sigma> Sigmas  { get; set; }
     }
 }

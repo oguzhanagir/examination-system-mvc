@@ -15,6 +15,8 @@ namespace examination_system_mvc.Controllers
         // GET: Question
         Context c = new Context();
         QuestionManager questionManager = new QuestionManager();
+        SigmaManager sigmaManager = new SigmaManager();
+        
         public ActionResult Index()
         {
             return View();
@@ -38,8 +40,6 @@ namespace examination_system_mvc.Controllers
 
         public ActionResult QuestionGetList()
         {
-           
-
             var questionList = questionManager.GetAll();
             return PartialView(questionList);
         }
@@ -58,10 +58,10 @@ namespace examination_system_mvc.Controllers
         }
 
         [HttpPost]
-        public ActionResult Exam(Question p)
+        public ActionResult Exam(Sigma p)
         {
-            var questionInfo = c.Questions.FirstOrDefault(x => x.RightAnswer == p.RightAnswer);
-            
+            //sigmaManager.SigmaAddBL(p);
+            sigmaManager.SigmaCheckBL(p);
             return RedirectToAction("Index");
         }
 
@@ -83,38 +83,6 @@ namespace examination_system_mvc.Controllers
         }
 
 
-        //public ActionResult GetDataWord(HttpPostedFileBase wordFile)
-        //{
-        //    if (wordFile == null || wordFile.ContentLength ==0)
-        //    {
-        //        ViewBag.Error = "Lütfen Dosya Seçimi Yapınız";
-        //        return View();
-        //    }
-        //    else
-        //    {
-        //        //Dosya uzantısı docx ise
-        //        if (wordFile.FileName.EndsWith("docx")|| wordFile.FileName.EndsWith("doc"))
-        //        {
-        //            //Dosyanın Nereye Yükleneceği Seçimi
-        //            string path = Server.MapPath("~/Content/Questions/" + wordFile.FileName);
-
-        //            //Dosya Kontrol Edilir Varsa Silinir.
-        //            if (System.IO.File.Exists(path))
-        //            {
-        //                System.IO.File.Delete(path);
-        //            }
-
-        //            //Word Path Yoluna Kaydedilir
-
-        //            wordFile.SaveAs(path);
-
-        //            Word.Application application = new Word.Application();
-        //            Word.Workbook workbook = application.Workbooks.Open(path);
-
-
-        //        }
-        //    }
-
-        //}
+        
     }
 }

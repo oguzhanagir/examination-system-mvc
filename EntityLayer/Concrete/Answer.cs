@@ -21,9 +21,11 @@ namespace EntityLayer.Concrete
         [StringLength(500)]
         public string OptionD { get; set; }
 
-        public char RightAnswer { get; set; }
+        [StringLength(10)]
+        public string RightAnswer { get; set; }
 
-        public IEnumerable<Question> Questions { get; set; }
 
+
+        public ICollection<Question> Questions { get; set; }
     }
 }

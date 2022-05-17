@@ -23,5 +23,7 @@ namespace EntityLayer.Concrete
         public string Password { get; set; }
         public int UserTypeID { get; set; }
         public virtual UserType UserType { get; set; }
+
+        public ICollection<Sigma> Sigmas { get; set; }
     }
 }

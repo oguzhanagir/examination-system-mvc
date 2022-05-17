@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Concrete\LoginManager.cs" />
     <Compile Include="Concrete\QuestionManager.cs" />
+    <Compile Include="Concrete\SigmaManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />
     <Compile Include="Concrete\UserProfileManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
