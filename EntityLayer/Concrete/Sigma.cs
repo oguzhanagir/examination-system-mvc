@@ -11,12 +11,8 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int SigmaID { get; set; }
-        public bool SigmaCheck1 { get; set; }
-        public bool SigmaCheck2 { get; set; }
-        public bool SigmaCheck3 { get; set; }
-        public bool SigmaCheck4 { get; set; }
-        public bool SigmaCheck5 { get; set; }
-        public bool SigmaCheck6 { get; set; }
+        public int SigmaCount { get; set; }
+        
 
         [StringLength(10)]
         public string UserAnswer { get; set; }

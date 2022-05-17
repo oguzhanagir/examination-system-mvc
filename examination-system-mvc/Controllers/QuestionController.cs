@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
+using PagedList;
+using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +36,7 @@ namespace examination_system_mvc.Controllers
         {
             
             questionManager.QuestionAddBL(p);
-            return RedirectToAction("QuestionGetList");
+            return RedirectToAction("QuestionAdd");
             
         }
 
@@ -51,17 +53,16 @@ namespace examination_system_mvc.Controllers
         }
 
         [HttpGet]
-        public ActionResult Exam()
+        public ActionResult Exam(int page = 1)
         {
-            var questionGetRandomList = questionManager.GetRandom();
+            var questionGetRandomList = questionManager.GetRandom().ToPagedList(page, 1);
             return View(questionGetRandomList);
         }
 
         [HttpPost]
         public ActionResult Exam(Sigma p)
         {
-            //sigmaManager.SigmaAddBL(p);
-            sigmaManager.SigmaCheckBL(p);
+            sigmaManager.SigmaCheckAddBL(p);
             return RedirectToAction("Index");
         }
 

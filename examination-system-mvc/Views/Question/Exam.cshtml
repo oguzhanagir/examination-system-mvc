@@ -1,4 +1,7 @@
-﻿@model IEnumerable<EntityLayer.Concrete.Question>
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IEnumerable<EntityLayer.Concrete.Question>
 
 @{
     Layout = null;
@@ -36,21 +39,24 @@
             </div>
             <div class="col-10">
                 <div class="container">
+                    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Exam", new { page }), PagedListRenderOptions.Minimal)
+
                     @foreach (var item in Model)
                     {
                         <div class="row">
                             <div class="content-title text-center">
-                                <h2>@item.GradeLevel - @item.LessonName</h2>
+                                <h2>@item.LessonName</h2>
                                 <br />
-                                <h2>@item.UnitNo - @item.UnitName</h2>
+                                <h2>Ünite @item.UnitNo </h2>
                             </div>
                             <div class="content-text mt-5 p-5 " style="background-color: #f5f5f5; border-radius:10px; ">
-                                @item.QuestionText
+                                <p> @item.QuestionText</p>
 
                                 <div class="container">
                                     <form class="form-group" method="post">
                                         <input class="d-none" type="radio" checked name="QuestionID" value="@item.QuestionID" />
-                                        <input class="d-none" type="radio" checked name="UserID" value="3" />
+                                        <input class="d-none" type="radio" checked name="UserID" value="3" /> @*UserID Kontrolü Eklenecektir*@
+                                        <input class="d-none" type="radio" checked name="SigmaID" value="@ViewBag.sigmaID" />
 
                                         <div class="">
                                             <label class="mt-4">
@@ -73,16 +79,18 @@
                                                 <span>@item.Answer.OptionD</span>
                                             </label>
                                         </div>
+                                       
                                         <button class="btn btn-rounded btn-danger mt-5 float-end">Sınavı Bitir</button>
 
                                     </form>
                                 </div>
                             </div>
                         </div>
-                        
+
+
                     }
-                
-                    
+
+
                 </div>
             </div>
         </div>

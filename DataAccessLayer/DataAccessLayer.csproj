@@ -114,6 +114,18 @@
     <Compile Include="Migrations\202205170844115_mig16.designer.cs">
       <DependentUpon>202205170844115_mig16.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205171050278_mig17.cs" />
+    <Compile Include="Migrations\202205171050278_mig17.designer.cs">
+      <DependentUpon>202205171050278_mig17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205171051404_mig18.cs" />
+    <Compile Include="Migrations\202205171051404_mig18.designer.cs">
+      <DependentUpon>202205171051404_mig18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205171200158_mig19.cs" />
+    <Compile Include="Migrations\202205171200158_mig19.designer.cs">
+      <DependentUpon>202205171200158_mig19.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -166,6 +178,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205170844115_mig16.resx">
       <DependentUpon>202205170844115_mig16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205171050278_mig17.resx">
+      <DependentUpon>202205171050278_mig17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205171051404_mig18.resx">
+      <DependentUpon>202205171051404_mig18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205171200158_mig19.resx">
+      <DependentUpon>202205171200158_mig19.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

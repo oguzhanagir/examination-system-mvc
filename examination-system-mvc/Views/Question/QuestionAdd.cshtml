@@ -32,22 +32,11 @@
                 <label>Lesson Name</label>
                 <input class="form-control border border-primary mt-4 mb-5" type="text" name="LessonName" placeholder="Lesson Name">
                 <label>Unit No</label>
-                <input class="form-control border border-primary mt-4 mb-5" type="text" name="UnitNo" placeholder="Unit No:">
-                <label>Unit Name</label>
-                <input class="form-control border border-primary mt-4 mb-5" type="text" name="UnitName" placeholder="Unit Name:">
-                <label>Subject No</label>
-                <input class="form-control border border-primary mt-4 mb-5" type="text" name="SubjectNo" placeholder="Subject No:">
-                <label>Subject Name</label>
-                <input class="form-control border border-primary mt-4 mb-5" type="text" name="SubjectName" placeholder="Subject Name:">
+                <input class="form-control border border-primary mt-4 mb-5" type="text" name="UnitNo" placeholder="Unit No:">              
                 <label>Question No</label>
                 <input class="form-control border border-primary mt-4 mb-5" type="text" name="QuestionNo" placeholder="Question No:">
-
-                @*Rich Text Editor*@
-                <div id="div_editor1">
-                    <p>Initial Document Content</p>
-                </div>
-
-                <input id="richText" checked type="radio" value="Soru" name="QuestionText">
+                @Html.Label("Soru Yazısı")
+                @Html.TextAreaFor(x => x.QuestionText, new { @class = "form-control border border-primary mt-4 mb-5", @placeholder = "Soru Yazısı" })
 
                 <label class="mt-5 mb-5">Doğru Olan Şıkkı İşaretleyiniz</label>
                 <br />
@@ -73,22 +62,7 @@
         </div> 
     </div>
 
-    @*Rich Text Editor Start*@
-
-    <script>
-        var editor1 = new RichTextEditor("#div_editor1");
-
-        editor1.setHTMLCode("<p>Merhabalar</p><p>Soru Yazı Kısmıdır</p>");
-
-        function btngetHTMLCode() {
-            alert(editor1.getHTMLCode());
-            document.getElementById("richText").value = editor1.getHTMLCode();
-        }
-
-        
-
-    </script>
-    @*Rich Text Editor End*@
+   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
