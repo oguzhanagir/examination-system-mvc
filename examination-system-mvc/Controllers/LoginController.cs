@@ -67,7 +67,7 @@ namespace examination_system_mvc.Controllers
         public ActionResult Register(User p)
         {
             loginManager.UserAddBL(p);
-            return RedirectToAction("Register");
+            return RedirectToAction("Login");
         }
 
         
