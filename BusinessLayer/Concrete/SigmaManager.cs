@@ -11,23 +11,48 @@ namespace BusinessLayer.Concrete
     public class SigmaManager
     {
         Repository<Sigma> repoSigma = new Repository<Sigma>();
+        Repository<Question> repoQuestion = new Repository<Question>();
 
-        public int SigmaCheckAddBL(Sigma p)
+
+        public int SigmaCheckAddBL(Sigma p, Question q)
         {
-            Sigma sigma = repoSigma.Find(x => x.SigmaID == p.SigmaID); //Sigma ID ulaşma eksik
+            Question question = repoQuestion.Find(x => x.QuestionID == q.QuestionID);
+
+            Sigma sigma = repoSigma.Find(x => x.QuestionID == q.QuestionID);
 
 
-            if (sigma.UserAnswer == sigma.Question.Answer.RightAnswer)
+
+            if (sigma.QuestionID == q.QuestionID )
             {
-                sigma.SigmaCount += sigma.SigmaCount;
-            }
-            else //SigmaCount 6 ya Ulaşınca Bilinen soru Havuzuna Taşı
-            {
-                sigma.SigmaCount = 0;
+                if (question.Answer.RightAnswer == p.UserAnswer)
+                {
+                    sigma.SigmaCount += 1;
+                    
+                }
+                else
+                {
+                    sigma.SigmaCount = 0;
+                }
+
+                if (sigma.SigmaCount == 6)
+                {
+                    sigma.SigmaCheck = true;
+                    //Bilinen Soruya Taşı ve Gösterme
+                }
+                else
+                {
+                    sigma.SigmaCheck = false;
+                }
+                
+                return repoSigma.Update(p);
             }
 
-
+            
             return repoSigma.Insert(p);
+
+
+
+
         }
 
     }

@@ -17,8 +17,9 @@ namespace examination_system_mvc.Controllers
         // GET: Question
         Context c = new Context();
         QuestionManager questionManager = new QuestionManager();
+        UserProfileManager profileManager = new UserProfileManager();
         SigmaManager sigmaManager = new SigmaManager();
-        
+
         public ActionResult Index()
         {
             return View();
@@ -55,14 +56,28 @@ namespace examination_system_mvc.Controllers
         [HttpGet]
         public ActionResult Exam(int page = 1)
         {
+            
+            var profileValues = profileManager.GetUserByMail((string)Session["Mail"]);
+            foreach (var item in profileValues)
+            {
+                if (profileValues.Count == 1)
+                {
+                    ViewBag.userProfile = item.UserID;
+                }
+                else
+                {
+                    break;
+                }            
+            }
+
             var questionGetRandomList = questionManager.GetRandom().ToPagedList(page, 1);
             return View(questionGetRandomList);
         }
 
         [HttpPost]
-        public ActionResult Exam(Sigma p)
+        public ActionResult Exam(Sigma p, Question q)
         {
-            sigmaManager.SigmaCheckAddBL(p);
+            sigmaManager.SigmaCheckAddBL(p,q);
             return RedirectToAction("Index");
         }
 

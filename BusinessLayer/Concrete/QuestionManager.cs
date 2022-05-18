@@ -11,6 +11,7 @@ namespace BusinessLayer.Concrete
     public class QuestionManager
     {
         Repository<Question> repoQuestion = new Repository<Question>();
+        
 
         public List<Question> GetAll()
         {
@@ -45,9 +46,6 @@ namespace BusinessLayer.Concrete
             question.GradeLevel = p.GradeLevel;
             question.LessonName = p.LessonName;
             question.UnitNo = p.UnitNo;
-            question.UnitName = p.UnitName;
-            question.SubjectNo = p.SubjectNo;
-            question.SubjectName = p.SubjectName;
             question.QuestionNo = p.QuestionNo;
             question.QuestionText = p.QuestionText;
             question.Answer.RightAnswer = p.Answer.RightAnswer;
@@ -64,7 +62,7 @@ namespace BusinessLayer.Concrete
             return repoQuestion.Find(x => x.QuestionID == id);
         }
 
-       
+        
 
     }
 }

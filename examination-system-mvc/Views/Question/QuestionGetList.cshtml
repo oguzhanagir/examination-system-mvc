@@ -13,9 +13,6 @@
             <th scope="col">Sınıf Düzeyi</th>
             <th scope="col">Dersin Adı:</th>
             <th scope="col">Ünite No</th>
-            <th scope="col">Ünite Adı</th>
-            <th scope="col">Konu No</th>
-            <th scope="col">Konu Adı</th>
             <th scope="col">Soru No</th>
             <th scope="col"></th>
 
@@ -30,9 +27,6 @@
                 <td>@item.GradeLevel</td>
                 <td>@item.LessonName</td>
                 <td>@item.UnitNo</td>
-                <td>@item.UnitName</td>
-                <td>@item.SubjectNo</td>
-                <td>@item.SubjectName</td>
                 <td>@item.QuestionNo</td>
                 <td><a href="/Question/DeleteQuestion/@item.QuestionID" class="btn btn-rounded btn-danger ">Sil</a></td>
                 <td><a href="/Question/UpdateQuestion/@item.QuestionID" class="btn btn-rounded btn-success">Güncelle</a></td>
