@@ -2,6 +2,7 @@
 ## Sınav Sistemi
 
 ## C# MVC .Net Çatısı Altında Geliştirilmiştir.
+## Entityframework Code-First Yaklaşımı ile Geliştirilmiştir
 
 ### Proje İçinde Yer Alan Modüller
 
